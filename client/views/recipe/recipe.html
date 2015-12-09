@@ -1,0 +1,76 @@
+<template name='recipe'>
+    {{> navbar}}
+    <div class="ui modal">
+      <i class="close icon"></i>
+      <div class="header">
+        Success!
+      </div>
+      <div class="image content">
+        <div class="ui medium image">
+          <img src={{recipe.img}}>
+        </div>
+        <div class="description">
+          <div class="ui header">That's stress free planning</div>
+          <p>We've grabbed all of the ingredients you need and put them directly into your shopping list. Take your time looking for more recipes and head over to the shopping list page when you are ready to print your shopping list.</p>
+        </div>
+      </div>
+      <div class="actions">
+        <div class="ui right labeled icon button blue">
+          Continue
+          <i class="checkmark icon"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class='recipe-wrapper'>
+      <h1 class="ui header">
+          <img src={{recipe.img}} class="ui rounded medium image">
+          <div class="content">
+               {{recipe.title}}
+                <div class="sub header"> by {{recipe.author}} </div>
+                <div class="ui favorite button blue">
+                    {{#if favorited}}
+                        Unfavorite
+                    {{else}}
+                        Favorite
+                    {{/if}}       
+                </div>
+
+           </div>
+      </h1>
+      <h2>
+         <div class="ui star huge rating recipe" data-rating={{recipeRating}} data-max-rating="5"></div>
+      </h2>
+
+
+      <h3 class="ui dividing header">Description</h3>
+      <p>{{recipe.description}}</p>
+
+      <h3 class="ui dividing header">Ingredients</h3>
+      <ul class="ui list">
+
+        {{#each recipe.ingredients}}
+            <li>
+              {{amount}} {{unit}}, {{name}}
+            </li>
+        {{/each}}
+      </ul>
+      <div class="ui right labeled icon add button blue">
+        Add Items
+        <i class="add to cart icon"></i>
+      </div>
+
+      <h3 class="ui dividing header">Directions</h3>
+      <ol class="ui list">
+
+        {{#each recipe.directions}}
+            <li>
+              {{.}}
+            </li>
+        {{/each}}
+
+      </ol>
+
+      {{> comments}}
+    </div>
+</template>

@@ -1,0 +1,77 @@
+<template name='recipes'>
+  {{> navbar}}
+  <div class="ui modal">
+    <i class="close icon"></i>
+    <div class="header blue">
+      Add a new recipe
+    </div>
+    <div class="image content destroyer">
+      {{> recipeform}}
+    </div>
+  </div>
+  <div class='recipes-wrapper'>
+    <div class='ui three column grid container'>
+      <div class='column'>
+        <div class="ui aligned left search recipes">
+          <div class="ui icon input">
+            <input class="prompt" type="text" placeholder="Search recipes...">
+            <i class="search icon"></i>
+          </div>
+          <div class="results left aligned"></div>
+        </div>
+      </div>
+      <div class='column aligned middle'>
+        <button class="ui button blue aligned left suggested">Suggested Recipes</button>
+      </div>
+      <div class='column aligned right'>
+        <button class="ui form button blue aligned left add">Add a Recipe!</button>
+      </div>
+    </div>
+    <div class="ui seven item inverted menu blue">
+      <a class="ingredient item active">All</a>
+      <a class="ingredient item">Beef</a>
+      <a class="ingredient item">Pork</a>
+      <a class="ingredient item">Chicken</a>
+      <a class="ingredient item">Fish</a>
+      <a class="ingredient item">Vegetables</a>
+      <a class="ingredient item">Misc</a>
+    </div>
+    <div class="ui five item inverted menu blue">
+      <a class="price item active">All</a>
+      <a class="price item">$</a>
+      <a class="price item">$$</a>
+      <a class="price item">$$$</a>
+      <a class="price item">$$$$</a>
+    </div>
+    <div class="ui four item inverted menu blue">
+      <a class="cooktime item active">All</a>
+      <a class="cooktime item">15 minutes or less</a>
+      <a class="cooktime item">30 minutes or less</a>
+      <a class="cooktime item">45 minutes or less</a>
+    </div>
+    <div class="ui items recipe-list">
+      {{#each recipe}}
+        <div class="ui fitted horizontal icon divider"><i class="spoon icon blue"></i></div>
+        <div class="item recipe-view">
+          <div class="ui small image">
+            <img src={{img}}>
+          </div>
+          <div class="content">
+            <div class="header">{{title}}</div>
+            <div class="meta">
+              <span class="price">{{price}}</span>
+              <span class="cooktime">{{cooktime}} min</span>
+              <span class="rating"><div class="ui star rating" data-rating={{rating}} data-max-rating="5"></div></span>
+            </div>
+
+            <div class="description">
+              <p>{{description}}</p>
+            </div>
+            <button class="basic ui redirect button" value={{id}}>Check it out</button>
+          </div>
+        </div>
+      {{/each}}
+      <div class="ui fitted horizontal icon divider"><i class="spoon icon blue"></i></div>
+    </div>
+  </div>
+</template>

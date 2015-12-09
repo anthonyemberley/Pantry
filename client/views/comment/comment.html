@@ -1,0 +1,14 @@
+<template name='comment'>
+  <div class="comment">
+      <a class="avatar">
+          <img src={{img}}>
+      </a>
+      <div class="content">
+          <a class="author">{{author}}</a>
+          <div class="ui star rating post {{author}}" data-rating={{rating}} data-max-rating="5"></div>
+          <div class="text">
+              {{body}}
+          </div>
+      </div>
+  </div>
+</template>

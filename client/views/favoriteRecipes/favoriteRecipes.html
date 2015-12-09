@@ -1,0 +1,22 @@
+<template name='favoriteRecipes'>
+  {{> navbar}}
+  <div class='recipes-wrapper'>
+    <h1 class="ui header aligned center">Favorite Recipes</h1>
+    <div class="ui fitted horizontal icon divider"><i class="spoon icon blue"></i></div>
+    <h3 class="ui header aligned center">Keep track of all your favorite recipes with the click of a button!</h3>
+    <div class="ui special two cards">
+      {{#each favoriteRecipe}}
+        {{> recipewidget .}}
+      {{else}}
+        <div class="ui info message aligned center">
+          <div class="header">
+            You haven't favorited any recipes yet! Click
+            the link below to search for some amazing recipes
+            in our catalog.
+          </div>
+          <div class="ui blue recipes button">Find Recipes</div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</template>

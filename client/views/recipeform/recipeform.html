@@ -1,0 +1,119 @@
+<template name="recipeform">
+    <div class="ui warning i message hidden">
+      <div class="header">
+      You must select a valid ingredient before adding another!
+      </div>
+    </div>
+
+    <div class="ui warning d message hidden">
+      <div class="header">
+      You must fill out the direction before adding another!
+      </div>
+    </div>
+    <form class="ui form">
+		<div class="error"></div>
+        <div class="recipe name">
+          <label>Recipe Name</label>
+          <input type="text" name="recipe name" placeholder="Recipe...">
+        </div>
+        <div class="image">
+          <label>Image URL</label>
+          <input type="text" name="img" placeholder="Image URL...">
+        </div>
+
+        <div class="ui ingredient list grid">
+          <div class="equal width row">
+            <div class="column">
+              <label>Cooktime</label>
+              <select class="cooktime">
+                <option value="">Choose</option>
+                <option value="05">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+                <option value="35">35</option>
+                <option value="40">40</option>
+                <option value="45">45</option>
+                <option value="50">50</option>
+                <option value="55">55</option>
+                <option value="60+">60+</option>
+              </select>
+            </div>
+            <div class="column">
+              <label>Estimated Cost</label>
+              <select class="cost">
+                <option value="">Choose</option>
+                <option value="$">$</option>
+                <option value="$$">$$</option>
+                <option value="$$$">$$$</option>
+                <option value="$$$$">$$$$</option>
+              </select>
+            </div>
+            <div class="column">
+              <label>Main Ingredient</label>
+              <select class="main ingredient">
+                <option value="">Choose</option>
+                <option value="beef">Beef</option>
+                <option value="pork">Pork</option>
+                <option value="chicken">Chicken</option>
+                <option value="fish">Fish</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="misc">Misc</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="description">
+          <label>Description</label>
+          <textarea type="text" rows="4" name="description" placeholder="A wonderful recipe..."></textarea>
+        </div>
+
+        <label><b>Ingredients</b></label>
+        <div class="ui ingredient list input grid">
+          <div class="equal width row">
+              <div class="column">
+                  <div class="ingredientInput">
+                      <div class="ui search i1">
+                          <div class="ui icon input">
+                              <input class="ingredient prompt i1" type="text" placeholder="Search ingredients...">
+                              <i class="search icon"></i>
+                          </div>
+                          <div class="results"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="column">
+                  <div class="ui input focus">
+                      <input class="amount prompt i1" type="number" min=".5" step=".5" onkeydown="return false" placeholder="Quantity">
+                  </div>
+              </div>
+              <div class="column">
+                  <div class="unitInput">
+                      <div class="ui input focus">
+                          <input class="unit prompt i1" type="text" placeholder="Unit" disabled>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="ui labeled add ingredient blue button">Add Ingredient</div>
+
+        <div class="directions list">
+          <label><b>Directions</b></label>
+          <div class="twelve wide field">
+            <input type="text" class="d1" placeholder="Direction 1...">
+          </div>
+        </div>
+        <div class="ui labeled add direction blue button">
+			Add Direction
+		</div>
+        <div class="ui right labeled icon submit blue button">
+          Submit
+          <i class="checkmark icon"></i>
+        </div>
+		
+    </form>
+</template>

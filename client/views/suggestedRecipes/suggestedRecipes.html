@@ -1,0 +1,38 @@
+<template name='suggestedRecipes'>
+  {{> navbar}}
+  <div class='recipes-wrapper'>
+    <div class="ui grid">
+            <div class="row">
+                <div class="column center aligned">
+                    <h1 class='ui header'>
+                        Suggested Recipes
+                    </h1>
+                    <div class="ui fitted horizontal icon divider"><i class="spoon icon blue"></i></div>
+                    <h3 class='ui header'>
+                        Recipes based on the ingredients you
+                        already have in your pantry.
+                    </h3>
+                </div>
+            </div>
+    </div>
+
+    <div class="ui special two cards">
+      {{#each suggestedRecipe}}
+        {{> recipewidget .}}
+      {{/each}}
+    </div>
+
+    <div class="ui info message aligned center hidden">
+      <div class="header">
+        There are no more suggestions based on the ingredients
+        in your pantry. Try adding some of the things you have and
+        checking again!
+      </div>
+      <div class="ui blue search button right">Add Ingredients</div>
+    </div>
+
+    <div class='column aligned middle more' style="padding-top: 20px">
+      <button class="ui button blue more">More Recipes</button>
+    </div>
+  </div>
+</template>

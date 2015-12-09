@@ -1,0 +1,105 @@
+<template name="shoppingList">
+    {{> navbar}}
+    <div class="shoppinglist-wrapper">
+        <div class="ui grid">
+            <div class="row">
+                <div class="column center aligned">
+                    <div id="head-greeting">
+                        Welcome to your Shopping List, {{currentUser.username}}!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui two column grid">
+          <div class="column">
+            <div class="ui warning message hidden">
+              <div class="header">
+              You must select a valid ingredient before you can do that!
+              </div>
+              Choose a delicious item, then try again
+            </div>
+            <div class='ui grid'>
+              <div class="equal width row">
+                  <div class="column">
+                      <div class="ingredientInput">
+                          <div class="ui search">
+                              <div class="ui icon input">
+                                  <input class="prompt" type="text" placeholder="Search ingredients...">
+                                  <i class="search icon"></i>
+                              </div>
+                              <div class="results"></div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="column">
+                      <div class="ui input focus">
+                          <input class="amountInput" type="number" min=".5" step=".5" onkeydown="return false" placeholder="Quantity">
+                      </div>
+                  </div>
+
+                  <div class="column">
+                      <div class="ui input focus">
+                          <input class="unitInput" type="text" placeholder="Unit">
+                      </div>
+                  </div>
+              </div>
+
+              <div class="row">
+                      <button id="addButton" class="ui button blue">
+                          Add Item to Shopping List
+                      </button>
+              </div>
+            </div>
+
+            <table class="ui celled inverted table blue">
+                <thead>
+                <tr>
+                    <th>Ingredient</th>
+                    <th>Amount</th>
+                    <th>Unit</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {{#each shoppingList.ingredients}}
+                    <tr>
+                        <td>{{ingredientName}}</td>
+                        <td>{{amount}}
+                            <span style="float: right">
+                                <i class="plus icon"></i> <i class="minus icon"></i>
+                            </span></td>
+                        <td>{{unit}}</td>
+                    </tr>
+                {{/each}}
+
+                </tbody>
+            </table>
+
+            <div class="ui grid">
+                <div class="row">
+                    <button id="moveButton" class="ui blue button">Move Shopping List to Pantry</button>
+                </div>
+            </div>
+          </div>
+          <div class="column">
+            <h2 class="ui header blue">Recipes in your shopping list:</h2>
+            <div class="ui special two cards">
+                {{#each recipes}}
+                    {{> recipewidget .}}
+                {{else}}
+                    <div class="ui info message">
+                      <div class="header">
+                        You currently do not have any recipes in your shopping list!
+                        Click below to begin searching amazing recipes.
+                      </div>
+                      <div class="ui blue search button">Find Recipes</div>
+                    </div>
+                {{/each}}
+            </div>
+          </div>
+        </div>
+
+
+    </div>
+</template>

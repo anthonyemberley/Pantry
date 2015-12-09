@@ -1,0 +1,117 @@
+<template name="index">
+  <header>
+      {{> header}}
+  </header>
+
+  <div class="ui four column main-content features grid">
+      {{#each feature}}
+          <div class="center aligned column">
+              <a href="{{path}}" class="ui unstyled no-hover-styles no-underline link icon header">
+                  <span class="headline">{{text}}</span>
+                  <i class="{{color}} {{icon}} boilerplate-feature icon"></i>
+              </a>
+          </div>
+      {{/each}}
+
+      <div id="recipes" class="main-content padding-wrapper">
+        <div class="ui fitted horizontal icon divider"><i class="spoon icon red"></i></div>
+        <div class="ui two column stackable grid">
+            <div class="middle aligned row">
+                <div class="center aligned column">
+                    <div class="center aligned icon-wrapper">
+                        <i class="circular massive red spoon icon"></i>
+                    </div>
+                </div>
+                <div class="column">
+                    <h3 class="large ui header">Find recipes <div class="sub header">Better than a cookbook</div></h3>
+                    <p>
+                        There are hundreds of mouthwatering recipes to choose from. Here are some of our favorites:</p>
+                    <div class="ui list">
+                        {{#each recipe}}
+                            <div class="item">
+                              <i class="spoon icon"></i>
+                              {{name}}
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <div id="ingredients" class="main-content padding-wrapper">
+        <div class="ui fitted horizontal icon divider"><i class="thumbs up icon blue"></i></div>
+        <div class="ui two column stackable grid">
+            <div class="middle aligned row">
+                <div class="column">
+                    <h3 class="large ui header">Cook great food <div class="sub header">Try out premium ingredients</div></h3>
+                    <p>Our new users have recently used for the first time:</p>
+                    <div class="ui list">
+                        {{#each ingredient}}
+                            <div class="item">
+                              <i class="thumbs up icon"></i>
+                              {{name}}
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="center aligned column">
+                    <div class="center aligned icon-wrapper">
+                        <i class="circular massive blue thumbs up icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <div id="shoppinglist" class="main-content padding-wrapper">
+        <div class="ui fitted horizontal icon divider"><i class="add to cart icon red"></i></div>
+        <div class="ui two column stackable grid">
+            <div class="middle aligned row">
+                <div class="center aligned column">
+                    <div class="center aligned icon-wrapper">
+                        <i class="circular massive red add to cart icon"></i>
+                    </div>
+                </div>
+                <div class="column">
+                    <h3 class="large ui header">Create shopping lists</h3>
+                    <div class="ui list">
+                        {{#each shoppinglist}}
+                            <div class="item">
+                              <i class="add to cart icon"></i>
+                              {{name}}
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <div id="money" class="main-content padding-wrapper">
+        <div class="ui fitted horizontal icon divider"><i class="dollar icon blue"></i></div>
+        <div class="ui two column stackable grid">
+            <div class="middle aligned row">
+	                <div class="column">
+	                    <h3 class="large ui header">We can save you money <div class="sub header">Here are some ways how: </div></h3>
+	                    <div class="ui list">
+	                        {{#each money}}
+	                            <div class="item">
+	                              <i class="money icon"></i>
+	                              {{name}}
+	                            </div>
+	                        {{/each}}
+	                    </div>
+	                </div>
+                <div class="center aligned column">
+                    <div class="center aligned icon-wrapper">
+                        <i class="circular massive blue dollar icon"></i>
+                    </div>
+                </div>
+	            </div>
+
+        </div>
+    </div>
+
+  </div>
+</template>

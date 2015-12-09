@@ -1,0 +1,27 @@
+<template name='recipewidget'>
+  <div class="card blue">
+    <div class="blurring dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui inverted blue redirect button" value={{id}}>Go to Full Recipe</div>
+          </div>
+        </div>
+      </div>
+      <img src={{img}}>
+    </div>
+    <div class="content aligned center">
+      <a class="header" disabled>{{title}}</a>
+      <div class="meta">
+        <div class="ui star rating recipe" data-rating={{rating}} data-max-rating="5"></div>
+      </div>
+      {{description}}
+    </div>
+    {{#if shoppingList}}
+      <div class="ui bottom attached blue remove button" value={{id}}>
+        <i class="remove icon"></i>
+        Remove Recipe
+      </div>
+    {{/if}}
+  </div>
+</template>

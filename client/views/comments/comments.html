@@ -1,0 +1,27 @@
+<template name='comments'>
+    <div class="ui comments">
+        <h3 class="ui dividing header">Reviews</h3>
+        {{#each comments}}
+          {{> comment .}}
+        {{/each}}
+        <div class="ui warning message aligned center hidden">
+          <div class="header">
+          That's not much to share! Try filling out the
+          form before posting a review again.
+          </div>
+        </div>
+        <form class="ui reply form">
+            <span>Rating: </span><div class="ui star rating input" data-rating="5" data-max-rating="5"></div>
+            <div class="field">
+                <textarea name='text'></textarea>
+            </div>
+            <div class="ui blue labeled submit icon button">
+				{{#if hasReviewed author}}
+                	<i class="icon edit"></i>Edit Review
+				{{else}}
+            		<i class="icon edit"></i>Add Review
+				{{/if}}
+            </div>
+        </form>
+    </div>
+</template>
