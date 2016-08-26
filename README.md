@@ -16,7 +16,7 @@ their own recipes and add them to the public database.
   - Oftentimes, people have a pantry full of ingredients, but aren’t sure what how to
   combine them to make a meal. We will help them by recommending recipes that
   are similar to ones they have liked in the past.
--Post and review recipes
-  -Posting recipes allows people to share the culture that develops from their cuisine
+- Post and review recipes
+  - Posting recipes allows people to share the culture that develops from their cuisine
   with people around the world. Adding the review feature allows users to share
   their experiences trying other types of cuisines and recipes.
